@@ -1,6 +1,5 @@
 package com.mangas.entidades;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -16,17 +15,16 @@ import java.util.List;
 @Entity
 public class Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
-    private String username;
-    private String nombre;
-    private String email;
-    private String password;
+	private String username;
+	private String nombre;
+	private String email;
+	private String password;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "usuarios")
-    private List<Manga> mangas;
+	@JsonIgnore
+	@ManyToMany(mappedBy = "usuarios")
+	private List<Manga> mangas;
 }
-

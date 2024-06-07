@@ -11,26 +11,26 @@ import com.mangas.repositorio.UsuarioRepository;
 @Service
 public class UsuarioService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 
-    public List<Usuario> findAll() {
-        return usuarioRepository.findAll();
-    }
+	public List<Usuario> findAll() {
+		return usuarioRepository.findAll();
+	}
 
-    public Usuario findById(int id) {
-        return usuarioRepository.findById(id).orElse(null);
-    }
+	public Usuario findById(int id) {
+		return usuarioRepository.findById(id).orElse(null);
+	}
 
-    public Usuario findByUsername(String username) {
-        return usuarioRepository.findByUsername(username);
-    }
+	public Usuario findByUsername(String username) {
+		return usuarioRepository.findByUsername(username);
+	}
 
-    public Usuario save(Usuario usuario) {
-        return usuarioRepository.save(usuario);
-    }
+	public Usuario save(Usuario usuario) {
+		return usuarioRepository.save(usuario);
+	}
 
-    public void deleteById(int id) {
-        usuarioRepository.deleteById(id);
-    }
+	public void deleteById(int id) {
+		usuarioRepository.deleteById(id);
+	}
 }

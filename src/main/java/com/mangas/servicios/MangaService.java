@@ -11,22 +11,32 @@ import com.mangas.repositorio.MangaRepository;
 @Service
 public class MangaService {
 
-    @Autowired
-    private MangaRepository mangaRepository;
+	@Autowired
+	private MangaRepository mangaRepository;
 
-    public List<Manga> findAll() {
-        return mangaRepository.findAll();
-    }
+	public List<Manga> findAll() {
+		return mangaRepository.findAll();
+	}
 
-    public Manga findById(int id) {
-        return mangaRepository.findById(id).orElse(null);
-    }
+	public Manga findById(int id) {
+		return mangaRepository.findById(id).orElse(null);
+	}
 
-    public Manga save(Manga manga) {
-        return mangaRepository.save(manga);
-    }
+	public Manga save(Manga manga) {
+		return mangaRepository.save(manga);
+	}
 
-    public void deleteById(int id) {
-        mangaRepository.deleteById(id);
-    }
+	public void deleteById(int id) {
+		mangaRepository.deleteById(id);
+	}
+	
+	public Manga getManga(int id) {
+		try {
+			
+		} catch (Exception e) {
+			
+		}
+		return null;
+	}
+	
 }

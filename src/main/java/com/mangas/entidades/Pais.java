@@ -9,10 +9,10 @@ import lombok.Data;
 @Data
 @Entity
 public class Pais {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nombre;
-	
+
 }

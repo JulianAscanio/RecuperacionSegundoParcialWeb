@@ -19,33 +19,30 @@ import java.util.List;
 @Entity
 public class Manga {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
-    private String nombre;
-    private Date fechaLanzamiento;
-    private int temporadas;
-    
-    @ManyToOne
-    @JoinColumn(name = "pais_id")
-    private Pais pais_id;
-    
-    private boolean anime;
-    private boolean juego;
-    private boolean pelicula;
+	private String nombre;
+	private Date fechaLanzamiento;
+	private int temporadas;
 
+	@ManyToOne
+	@JoinColumn(name = "pais_id")
+	private Pais pais_id;
 
-    @ManyToOne
-    @JoinColumn(name = "tipo_id")
-    private Tipo tipo_id;
+	private boolean anime;
+	private boolean juego;
+	private boolean pelicula;
 
-    @JsonIgnore
-    @ManyToMany
-    @JoinTable(
-            name = "usuario_manga",
-            joinColumns = @JoinColumn(name = "manga_id"),
-            inverseJoinColumns = @JoinColumn(name = "usuario_id")
-    )
-    private List<Usuario> usuarios;
+	@ManyToOne
+	@JoinColumn(name = "tipo_id")
+	private Tipo tipo_id;
+
+	@JsonIgnore
+	@ManyToMany
+	@JoinTable(name = "usuario_manga", 
+	           joinColumns = @JoinColumn(name = "manga_id"), 
+	           inverseJoinColumns = @JoinColumn(name = "usuario_id"))
+	private List<Usuario> usuarios;
 }
